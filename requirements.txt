@@ -1,3 +1,2 @@
 langchain
-python-dotenv==1.0.0
 streamlit==1.24.1
