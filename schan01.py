@@ -10,7 +10,9 @@ agent = initialize_agent(
     tools=tools, llm=llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION
 )
 
-if prompt := st.chat_input():
+# if prompt := st.chat_input():
+prompt = st.chat_input()
+if prompt:
     st.chat_message("user").write(prompt)
     with st.chat_message("assistant"):
         st.write("🧠 thinking...")
