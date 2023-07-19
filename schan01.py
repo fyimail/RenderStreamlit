@@ -1,10 +1,14 @@
 import os
+# from dotenv import load_dotenv
 from langchain.llms import OpenAI
 from langchain.agents import load_tools, initialize_agent, AgentType
 from langchain.callbacks import StreamlitCallbackHandler
 import streamlit as st
 
-llm = OpenAI(temperature=0, streaming=True, openai_api_key=os.getenv('OPENAI_API_KEY'))
+# load_dotenv()
+
+# llm = OpenAI(temperature=0, streaming=True, openai_api_key=os.getenv('OPENAI_API_KEY'))
+llm = OpenAI(temperature=0, streaming=True, openai_api_key=st.secrets["OPENAI_API_KEY"])
 tools = load_tools(["ddg-search"])
 agent = initialize_agent(
     tools=tools, llm=llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION
