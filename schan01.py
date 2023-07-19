@@ -1,5 +1,6 @@
 import os
 # from dotenv import load_dotenv
+import openai
 from langchain.llms import OpenAI
 from langchain.agents import load_tools, initialize_agent, AgentType
 from langchain.callbacks import StreamlitCallbackHandler
